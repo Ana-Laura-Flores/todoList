@@ -1,7 +1,19 @@
-import React from 'react'
+import Header from './components/Header.jsx';
 
-export default function App() {
+
+import './App.css'
+
+function App({notes, addNote}) {
   return (
-    <div>App</div>
+    <>
+      {/* <h1 className='text-red-600'>Notas</h1> */}
+      <div>
+        <Header notes={notes}/>
+      </div>
+      
+    </>
   )
 }
+
+export default App
+
