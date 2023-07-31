@@ -1,7 +1,4 @@
 import Sticker01 from "../assets/img/05.png"
-import Filter from './Filter.jsx'
-import Add from "./Add.jsx"
-import Modify from "./Modify.jsx"
 import Main from "./Main"
 
 export default function Header () {
