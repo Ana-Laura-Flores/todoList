@@ -1,16 +1,21 @@
 import { useState } from 'react';
 import Note from './Note.jsx';
 
-export default function List() {
-    const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[])
-   
-    return (
+export default function List({notes, setNotes}) {
+    //  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[])
+     console.log(notes)
+     return (
         <div>
-           {notes && notes.map((dat, index) => {
+           {notes && notes.map(({title, id, complete}) => {
             return (
                     <Note 
-                    work={dat}
-                    key={index}
+                    title={title}
+                    key={id}
+                    id={id}
+                    complete={complete}
+                    notes={notes}
+                    setNotes={setNotes}
+
                     />   
                 )
             })

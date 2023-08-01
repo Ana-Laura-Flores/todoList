@@ -1,5 +1,5 @@
 import Sticker01 from "../assets/img/05.png"
-import Main from "./Main"
+import Main from "./ContainerMain"
 
 export default function Header () {
 
@@ -9,7 +9,7 @@ export default function Header () {
                 <img src={Sticker01} alt="" className='w-28'/>
                 <p className="mx-10 font-['Satisfy'] text-5xl">Mis Notas</p>
             </div>
-            <Main />
+           
         </div>
     )
 }
