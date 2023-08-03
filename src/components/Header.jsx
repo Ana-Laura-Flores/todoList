@@ -1,5 +1,5 @@
 import Sticker01 from "../assets/img/05.png"
-import Main from "./ContainerMain"
+
 
 export default function Header () {
 

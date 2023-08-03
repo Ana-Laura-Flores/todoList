@@ -1,32 +1,37 @@
-import List from "./List.jsx"
 import { useState } from 'react'
-import Note from "./Note.jsx"
 
-export default function Filter() {
-    // const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[])
-    // const [status, setStatus] = useState(JSON.parse(localStorage.getItem("notes"))||[])
-    // console.log(notes)
-    
-    // const complete = () => {
-    //     const completeNotes = notes.filter((note) => note.target.name === "Completa")
-    //     localStorage.setItem("notes", JSON.stringify(completeNotes))
-    //     window.location.reload()
+export default function Filter({notes, setNotes,filterStatus, setFilterStatus, setNotesFiltered, notesFiltered}) {
+
+   
+    const handleFilterChange = (e) => {
+        setFilterStatus(e.target.value);
+        filteredNotes()
         
-    // }
-    // const inComplete = () => {
-    //     const inCompleteNotes = notes.filter((note) => note.target.name === "Incompleta")
-    //     //localStorage.setItem("notes", JSON.stringify(inCompleteNotes))
-    //     console.log(setStatus(inCompleteNotes))
+      }
+      const filteredNotes = () => {
+          if (filterStatus === "all") {
+            setNotesFiltered(notes) 
+            console.log(notes)
+            } else {
+                if (filterStatus === "complete") {
+                    setNotesFiltered(notes.filter((note) => note.complete))
+                    console.log(notes)
+                  }else 
+                    setNotesFiltered(notes.filter((note) => !note.complete));
+                    console.log(notes)
+                  
+            }
        
-    //}
+      }
+     
     return (
-        <div className='w-full m-3 md:w-1/2 shadow-md rounded-md bg-violet-200 h-16 flex items-center p-5'>
-                        <label htmlFor="" className='px-5'>Seleccionar</label>
-                        <select name="" id="" onChange={e => e.target.value == "Completas" ? {complete} : {inComplete}}>
-                            <option value="Todas">Todas</option>  
-                            <option value="Completas">Completas</option> 
-                            <option value="Incompletas">Incompletas</option> 
+        <div className='w-3/4 m-3 md:w-1/2 shadow-md rounded-md bg-violet-200 h-16 flex items-center p-5'>
+                        <label htmlFor="" className='pr-5'>Seleccionar</label>
+                        <select className="w-1/2"name={filterStatus} id="" value={filterStatus} onChange={handleFilterChange}>
+                            <option value="all">Todas</option>  
+                            <option value="complete">Completas</option> 
+                            <option value="incomplete">Incompletas</option> 
                         </select> 
-                    </div>
+         </div>
     )
 }

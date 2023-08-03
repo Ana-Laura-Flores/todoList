@@ -1,14 +1,10 @@
 import React from 'react'
-import { useState } from 'react';
-import Note from "./Note.jsx"
 import { FcApproval, FcFullTrash } from "react-icons/fc";
 
-export default function Delete({taskComplete, title, id}) {
-   
-    const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[])
-
-    const deleteNote = () => {
-        const currentNote =  notes.filter(({id}) => id != work)
+export default function Delete({taskComplete, notes, title, id}) {
+  
+  const deleteNote = () => {
+        const currentNote =  notes.filter((note) => note.id != id)
         localStorage.setItem("notes", JSON.stringify(currentNote))
         window.location.reload()
     }
