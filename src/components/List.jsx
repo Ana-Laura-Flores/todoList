@@ -6,11 +6,8 @@ export default function List({notes, setNotes, filterStatus, setFilterStatus, no
      
      return (
         <div>
-            
-           {console.log(notesFiltered)}
            {!notesFiltered.length && notes ? notes.map(({title, id, complete}) => {
             return (
-                console.log("entre en notes"),
                     <Note 
                     title={title}
                     key={id}
@@ -18,7 +15,6 @@ export default function List({notes, setNotes, filterStatus, setFilterStatus, no
                     complete={complete}
                     notes={notes}
                     setNotes={setNotes}
-
                     />   
                 )
             }) : notesFiltered.map(({title, id, complete}) => {
@@ -30,7 +26,6 @@ export default function List({notes, setNotes, filterStatus, setFilterStatus, no
                     complete={complete}
                     notes={notes}
                     setNotes={setNotes}
-
                     />   
                 )
             })
