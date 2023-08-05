@@ -1,7 +1,3 @@
-import React from 'react'
-
-
-
 export default function SaveNote({addNote, error, set}) {
     
    

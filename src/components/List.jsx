@@ -2,10 +2,9 @@ import Note from './Note.jsx';
 
 export default function List({notes, setNotes, filterStatus, setFilterStatus, notesFiltered}) {
     //  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[])
-     console.log(notes)
-     
+         
      return (
-        <div>
+        <div className='w-3/5'>
            {!notesFiltered.length && notes ? notes.map(({title, id, complete}) => {
             return (
                     <Note 

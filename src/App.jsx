@@ -2,11 +2,12 @@ import Header from './components/Header.jsx';
 import List from './components/List.jsx';
 import { useState } from "react";
 import ContainerMain from './components/ContainerMain.jsx';
+import Footer from './components/Footer.jsx';
 
 
 function App() {
   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[])
-  const [filterStatus, setFilterStatus] = useState('all')
+  const [filterStatus, setFilterStatus] = useState('null')
   const [notesFiltered, setNotesFiltered] = useState([])
   return (
     
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <ContainerMain notes={notes} setNotes={setNotes} filterStatus={filterStatus} setFilterStatus={setFilterStatus} notesFiltered={notesFiltered} setNotesFiltered={setNotesFiltered} />
         <List notes={notes} setNotes={setNotes} filterStatus={filterStatus} setFilterStatus={setFilterStatus} notesFiltered={notesFiltered} setNotesFiltered={setNotesFiltered}/>
+        <Footer/>
       </div>
       
    
