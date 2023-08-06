@@ -1,4 +1,4 @@
-export default function Filter({filterStatus, setFilterStatus}) {
+export default function Filter({setFilterStatus}) {
 
     // const handleFilterChange = (e) => {
     //     setFilterStatus(e.target.value);

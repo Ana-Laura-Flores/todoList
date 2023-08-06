@@ -6,8 +6,7 @@ export default function List({notes, setNotes, filterStatus}) {
      return (
         <div className='w-3/5'>
            {notes && notes.map(({title, id, complete}) => {
-               console.log(filterStatus)
-               if(complete == filterStatus){
+                if(complete == filterStatus){
                    
                 return (
                     <Note 
@@ -29,20 +28,8 @@ export default function List({notes, setNotes, filterStatus}) {
                         setNotes={setNotes}
                         />   
                     )}
-                    })
-            
-            // }) : notesFiltered.map(({title, id, complete}) => {
-            // return (
-            //         <Note 
-            //         title={title}
-            //         key={id}
-            //         id={id}
-            //         complete={complete}
-            //         notes={notes}
-            //         setNotes={setNotes}
-            //         />   
-            //     )
-            // })
+                })
+        
              }
         </div>
     )

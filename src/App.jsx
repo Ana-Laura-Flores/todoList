@@ -13,8 +13,8 @@ function App() {
     
       <div className='flex flex-col justify-center items-center w-full'>
         <Header />
-        <ContainerMain notes={notes} setNotes={setNotes} filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
-        <List notes={notes} setNotes={setNotes} filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
+        <ContainerMain notes={notes} setNotes={setNotes} setFilterStatus={setFilterStatus} />
+        <List notes={notes} setNotes={setNotes} filterStatus={filterStatus} />
         <Footer/>
       </div>
       

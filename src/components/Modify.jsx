@@ -1,4 +1,4 @@
-export default function Modify({modifyNote, work, error}) {
+export default function Modify({modifyNote, work, error, disabled}) {
     
     return (
         <div className='w-3/4 md:w-1/2 m-3 md:ml-10' >
