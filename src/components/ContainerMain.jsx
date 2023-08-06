@@ -3,7 +3,7 @@ import Filter from './Filter.jsx'
 import { useState } from "react";
 import SaveNote from './SaveNote.jsx';
 
-export default function ContainerMain({notes, setNotes, notesFiltered, setNotesFiltered, filterStatus, setFilterStatus}) {
+export default function ContainerMain({notes, setNotes, filterStatus, setFilterStatus}) {
   const [error, setError] = useState("")
   
   const [work, setWork] = useState ({
@@ -38,7 +38,7 @@ export default function ContainerMain({notes, setNotes, notesFiltered, setNotesF
       <form type="submit" className="mt-3 w-11/12 flex flex-col justify-center items-center ">
           <div className='flex w-full flex-col  justify-center items-center md:flex-row'>
             <Modify modifyNote={modifyNote} work={work} error={error}/>
-            <Filter notes={notes}  setNotes={setNotes} filterStatus={filterStatus} setFilterStatus={setFilterStatus}  setNotesFiltered={setNotesFiltered}/>
+            <Filter filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
           </div>
             <SaveNote work={work} addNote={addNote}/>
       </form>

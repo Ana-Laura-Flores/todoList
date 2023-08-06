@@ -1,12 +1,15 @@
 import Note from './Note.jsx';
 
-export default function List({notes, setNotes, filterStatus, setFilterStatus, notesFiltered}) {
+export default function List({notes, setNotes, filterStatus}) {
     //  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[])
          
      return (
         <div className='w-3/5'>
-           {!notesFiltered.length && notes ? notes.map(({title, id, complete}) => {
-            return (
+           {notes && notes.map(({title, id, complete}) => {
+               console.log(filterStatus)
+               if(complete == filterStatus){
+                   
+                return (
                     <Note 
                     title={title}
                     key={id}
@@ -15,20 +18,32 @@ export default function List({notes, setNotes, filterStatus, setFilterStatus, no
                     notes={notes}
                     setNotes={setNotes}
                     />   
-                )
-            }) : notesFiltered.map(({title, id, complete}) => {
-            return (
-                    <Note 
-                    title={title}
-                    key={id}
-                    id={id}
-                    complete={complete}
-                    notes={notes}
-                    setNotes={setNotes}
-                    />   
-                )
-            })
-            }
+                )} else if (filterStatus === ""){
+                    return (
+                        <Note 
+                        title={title}
+                        key={id}
+                        id={id}
+                        complete={complete}
+                        notes={notes}
+                        setNotes={setNotes}
+                        />   
+                    )}
+                    })
+            
+            // }) : notesFiltered.map(({title, id, complete}) => {
+            // return (
+            //         <Note 
+            //         title={title}
+            //         key={id}
+            //         id={id}
+            //         complete={complete}
+            //         notes={notes}
+            //         setNotes={setNotes}
+            //         />   
+            //     )
+            // })
+             }
         </div>
     )
 }

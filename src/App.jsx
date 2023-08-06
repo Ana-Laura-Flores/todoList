@@ -7,14 +7,14 @@ import Footer from './components/Footer.jsx';
 
 function App() {
   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes"))||[])
-  const [filterStatus, setFilterStatus] = useState('null')
-  const [notesFiltered, setNotesFiltered] = useState([])
+  const [filterStatus, setFilterStatus] = useState("")
+  
   return (
     
       <div className='flex flex-col justify-center items-center w-full'>
         <Header />
-        <ContainerMain notes={notes} setNotes={setNotes} filterStatus={filterStatus} setFilterStatus={setFilterStatus} notesFiltered={notesFiltered} setNotesFiltered={setNotesFiltered} />
-        <List notes={notes} setNotes={setNotes} filterStatus={filterStatus} setFilterStatus={setFilterStatus} notesFiltered={notesFiltered} setNotesFiltered={setNotesFiltered}/>
+        <ContainerMain notes={notes} setNotes={setNotes} filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
+        <List notes={notes} setNotes={setNotes} filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
         <Footer/>
       </div>
       

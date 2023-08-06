@@ -8,8 +8,8 @@ export default function Footer() {
             <li className="p-5"><a href="https://www.linkedin.com/in/kreardisenio/" target="blank"> <FaLinkedinIn/>  </a></li>
             <li className="p-5" ><a href="mailto:anadisenio@hotmail.com" target="_blank"><FaEnvelope/></a></li>
         </ul>
-        <div class="footer-copry flex mb-3">
-            <p class="px-2">Hecho con </p><p className="">❤️</p><p className="px-2"> por Ana Laura Flores</p>
+        <div className="footer-copry flex mb-3">
+            <p className="px-2">Hecho con </p><p className="">❤️</p><p className="px-2"> por Ana Laura Flores</p>
         </div>
     </footer>
     </div>
