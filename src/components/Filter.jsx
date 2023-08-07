@@ -1,21 +1,25 @@
 export default function Filter({setFilterStatus}) {
 
-    // const handleFilterChange = (e) => {
-    //     setFilterStatus(e.target.value);
-    //     //filteredNotes(e.target.value)
-     
      const handleChangeStatus = (e) => {
         const valueStatus = e.target.value
-        switch (valueStatus){
-            case "":
+        if (valueStatus === "") {
             setFilterStatus("")
-            break;
-            case "complete" :
+            
+        } else if (valueStatus === "complete") {
             setFilterStatus(true)
-            break;
-            case "incomplete":
-            setFilterStatus(false);
-            }
+        } else {
+            setFilterStatus(false)
+        }
+        // switch (valueStatus){
+        //     case "":
+        //     setFilterStatus("")
+        //     break;
+        //     case "complete" :
+        //     setFilterStatus(true)
+        //     break;
+        //     case "incomplete":
+        //     setFilterStatus(false);
+        //     }
        
         }
          

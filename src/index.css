@@ -45,7 +45,7 @@ transform-origin:center;
 }
 @keyframes latidos {
   0% { font-size: 1.5rem; }
-  50% { font-size: 2rem; }
+  50% { font-size: 1.6rem; }
   100% { font-size: 1.5rem; }
 }
 
