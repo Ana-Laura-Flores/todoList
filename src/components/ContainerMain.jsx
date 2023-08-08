@@ -2,6 +2,7 @@ import Modify from './Modify.jsx'
 import Filter from './Filter.jsx'
 import { useState } from "react";
 import SaveNote from './SaveNote.jsx';
+import Validate from './Validate.jsx';
 
 export default function ContainerMain({notes, setNotes, setFilterStatus, error, setError}) {
   
@@ -17,38 +18,33 @@ export default function ContainerMain({notes, setNotes, setFilterStatus, error, 
           title: e.target.value,
           complete: false,
           id: crypto.randomUUID(),
-          
-          })
-          validateNote(e.target.value)
-          //console.log(noteExist)
-          //console.log(work.title)
-          console.log(e.target.value)
-          
-           
+         }),
+         validateNote(e.target.value)
+          // <Validate valor={e.target.value} notes={notes} setError={setError} setIsDisabled={setIsDisabled}/>          
          }
-    const validateNote = (valor) => {
-      //const value = e.target.value
-      const noteExist = notes.find(note => note.title === valor)
-      console.log(noteExist)
-      if (valor.length < 5 || valor === ""){
-        setError(
-             <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 text-sm md:text-base p-4 m-2 w-5/6" role="alert" >
-               <p className="font-bold">Campo Requerido</p>
-               <p>Debe contener al menos 5 caracteres.</p>
-           </div>,
-           setIsDisabled(true))
-         } 
-         else if(noteExist) {
-           setError(<div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 text-sm md:text-base p-4 m-2 w-5/6" role="alert" >
-           <p className="font-bold">Ya existe una nota con ese nombre</p>
-           </div>,
-           setIsDisabled(true))
-         } 
-         else{
-         setError("")
-         setIsDisabled(false)
-       }
-    }
+
+     const validateNote = (valor) => {
+       //const value = e.target.value
+       const noteExist = notes.find(note => note.title === valor)
+      
+       if (valor.length < 5 || valor === ""){
+         setError(
+              <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 text-sm md:text-base p-4 m-2 w-5/6" role="alert" >
+                <p className="font-bold">Campo Requerido</p>
+                <p>Debe contener al menos 5 caracteres.</p>
+            </div>,
+            setIsDisabled(true))
+          } else if(noteExist) {
+            setError(<div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 text-sm md:text-base p-4 m-2 w-5/6" role="alert" >
+            <p className="font-bold">Ya existe una nota con ese nombre</p>
+            </div>,
+            setIsDisabled(true))
+          } else{
+          setError("")
+          setIsDisabled(false)
+        }
+     }
+    
     const addNote = (e) =>{ 
       if (!isDisabled) {
         e.preventDefault()
