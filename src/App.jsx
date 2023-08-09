@@ -15,7 +15,7 @@ function App() {
       <div className='flex flex-col justify-center items-center w-full'>
         <Header />
         <ContainerMain notes={notes} error={error} setError={setError} setNotes={setNotes} setFilterStatus={setFilterStatus} />
-        <List error={error} notes={notes} setNotes={setNotes} filterStatus={filterStatus} />
+        <List notes={notes} setNotes={setNotes} filterStatus={filterStatus} />
         <Footer/>
       </div>
       

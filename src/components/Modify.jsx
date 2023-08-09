@@ -7,7 +7,6 @@ export default function Modify({modifyNote, work, error}) {
                 <label htmlFor="" className='mr-3'>Tarea</label>
                 <input type="text" name="title" className='m-2 w-11/12 p-2' value={work.title} onChange={modifyNote} placeholder='Ingrese una tarea' /> 
             </div>
-            
         </div>
     
   )
