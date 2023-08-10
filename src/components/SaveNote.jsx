@@ -1,5 +1,4 @@
 export default function SaveNote({addNote, isDisabled}) {
-  
    
   return (
     <div className='flex flex-col items-center'>
