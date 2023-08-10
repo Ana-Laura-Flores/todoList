@@ -2,7 +2,7 @@
 <p> Es una aplicación de control de notas o tareas realizada con React(JavaScript). Desarrollado con Tailwind y vite </p>
 <p> Corresponde al módulo V de la carrera de Desarrollo Frontend ADA - por lo cual es parte de un proceso de aprendizaje </p>
 
-[link del proyecto](https://ana-laura-flores.github.io/ahorradas-proyect-javascript/)
+[link del proyecto](https://todo-list-theta-dun.vercel.app/)
 
 
 
