@@ -4,8 +4,9 @@ import { useState } from "react";
 import SaveNote from './SaveNote.jsx';
 import Validate from './Validate.jsx';
 
-export default function ContainerMain({notes, setNotes, setFilterStatus, error, setError}) {
-  
+export default function ContainerMain({notes, setNotes, setFilterStatus, error, setError, setFilteredNotes}) {
+ 
+
   const [isDisabled, setIsDisabled] = useState(true);
   const [work, setWork] = useState ({
     title: "".trim(),
@@ -37,7 +38,7 @@ export default function ContainerMain({notes, setNotes, setFilterStatus, error, 
       <form type="submit" className="mt-3 w-11/12 flex flex-col justify-center items-center ">
           <div className='flex w-full flex-col  justify-center items-center md:flex-row'>
             <Modify modifyNote={modifyNote} work={work} error={error}/>
-            <Filter setFilterStatus={setFilterStatus} />
+            <Filter setFilterStatus={setFilterStatus} setFilteredNotes={setFilteredNotes} notes={notes} />
           </div>
             <SaveNote addNote={addNote} isDisabled={isDisabled} />
       </form>

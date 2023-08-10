@@ -1,26 +1,24 @@
-export default function Filter({setFilterStatus}) {
 
+export default function Filter({setFilterStatus, notes, setFilteredNotes}) {
+    let noteFiltradas = notes
      const handleChangeStatus = (e) => {
         const valueStatus = e.target.value
-        if (valueStatus === "") {
-            setFilterStatus("")
+               
+            if (valueStatus === "") {
+                noteFiltradas = notes
+                setFilterStatus("")
+                
+            } else if (valueStatus === "complete") {
+                noteFiltradas = notes.filter((note) => note.complete),
+                setFilteredNotes(noteFiltradas),
+                setFilterStatus(true)
+              
+            } else {
+                noteFiltradas = notes.filter((note) => !note.complete),
+               setFilterStatus(false)
+            }
             
-        } else if (valueStatus === "complete") {
-            setFilterStatus(true)
-        } else {
-            setFilterStatus(false)
-        }
-        // switch (valueStatus){
-        //     case "":
-        //     setFilterStatus("")
-        //     break;
-        //     case "complete" :
-        //     setFilterStatus(true)
-        //     break;
-        //     case "incomplete":
-        //     setFilterStatus(false);
-        //     }
-       
+          setFilteredNotes(noteFiltradas) 
         }
          
     return (
