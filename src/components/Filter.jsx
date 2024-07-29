@@ -1,7 +1,8 @@
 
 export default function Filter({setFilterStatus, notes, setFilteredNotes}) {
-    let noteFiltradas = notes
+    
      const handleChangeStatus = (e) => {
+        let noteFiltradas = notes
         const valueStatus = e.target.value
                
             if (valueStatus === "") {
