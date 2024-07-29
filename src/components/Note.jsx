@@ -28,7 +28,11 @@ export default function Note({title, id, complete, setNotes, notes}) {
          <div className="w-11/12 flex flex-row p-2 bg-slate-300 rounded-lg m-5">
             <div className="w-full flex">
                 <p id={id} className={`w-3/4 items-start justify-between text-left font-bold pl-5 ${complete ? 'line-through font-normal' : ''}`}>{title}</p>
-                <Delete notes={notes} id={id} taskComplete={taskComplete} />
+                <Delete 
+                  notes={notes} 
+                  id={id} 
+                  taskComplete={taskComplete} 
+                />
             </div>
         </div>
     )
